@@ -1,0 +1,52 @@
+*{margin: 0px;padding: 0px; box-sizing: box-border;}
+*::after{
+    box-sizing: box-border;
+}
+*::before{
+    box-sizing: box-border;
+}
+/*分成上下的屏幕*/
+body{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;/*分成上下的屏幕*/
+}
+.code-wrapper{
+    flex: 1;/*分成上下的屏幕*/
+    height: 50%;
+}
+.preview-wrapper{
+    flex: 1;/*分成上下的屏幕*/
+    height: 50%;
+}
+.preview{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    background: #FEE433;
+}
+.pikachu{
+    height: 165px;
+    width: 100%;
+    position: relative;
+}
+#code{
+    overflow: hidden;
+    height: 100%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
