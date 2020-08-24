@@ -9,7 +9,7 @@
                 duration=100
                 break
             case 'normal':
-                duration=50
+                duration=40
                 break
             case 'fast':
                 duration=10
@@ -18,7 +18,7 @@
 
     })
     //所有的setInterval都可以用setTimeout来替代
-    var duration=50;
+    var duration=40;
     function writeCode(prefix, code, fn) {
         let domCode = document.querySelector('#code')
         let styleTag = document.querySelector('#styleTag')
@@ -27,6 +27,7 @@
         let id = setTimeout(function run(){
             n+=1;
             domCode.innerHTML = prefix + code.substring(0,n)
+            domCode.innerHTML = Prism.highlight(domCode.innerHTML, Prism.languages.css, 'css');
             styleTag.innerHTML = prefix + code.substring(0,n)
             domCode.scrollTop = domCode.scrollHeight
             if (n< code.length){
@@ -38,6 +39,9 @@
     }
 
     var result= `/*我们来画一只皮卡丘吧*/
+    html{
+    font-size: 16px;
+}
     /*首先我们先画一个鼻子*/
     .nose{
     width: 0px;
@@ -49,6 +53,19 @@
     left: 50%;
     margin-left: -11px;
     top: 28px;
+}
+/*我们将代码高亮吧，这样好看一点*/
+ .token.property{
+    color: #905;
+}
+ .token.selector{
+    color: #690;
+}
+ .token.function{
+    color: #DD4A68;
+}
+ .token.punctuation{
+    color: #999;
 }
 /*然后我们画眼睛*/
 .eye{
